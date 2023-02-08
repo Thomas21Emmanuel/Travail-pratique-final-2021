@@ -1,0 +1,45 @@
+/*Importation des polices*/
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+</style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Changer la police du Habs*/
+.habs {
+    font-family: 'Secular One', sans-serif;
+}
+
+/*Modification de la police dans les questions et pour le texte de fin*/
+#quiz{
+    font-family: 'Secular One', sans-serif;
+}
+
+p{
+    font-family: 'Vast Shadow', cursive;
+}
+/*Style de base de la page*/
+body {
+    font-size: 2rem;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	text-align: center;
+	padding-top: 15%;
+}
+
+main, header, footer, section {
+    width: 100%;
+}
+
+.quiz {
+	display: none;
+}

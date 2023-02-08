@@ -1,0 +1,113 @@
+
+/*Animatin pour les réponses*/
+@keyframes reponse {
+		0%{
+			opacity: 0;	
+			transform: translateY(10vh);			
+		}
+
+		100%{
+			opacity: 1;
+			transform: translateY(0);	
+		}			
+	}
+
+@keyframes transition {
+		0%{
+			opacity: 0;	
+			transform: translateX(100vw);			
+		}
+
+		100%{
+			opacity: 1;
+			transform: translateX(0);	
+		}			
+	}
+
+/*Animation de l'intro*/
+@keyframes AnimIntro {
+    from{
+        transform: rotate(12deg);
+    }
+    
+    15%{
+        transform: rotate(45deg);
+        color:#AF1E2D;
+        
+    }
+    
+    25%{
+        transform: rotate(75deg);
+        color: white;
+    }
+    
+    45%{
+        transform:scale(2);
+        color:#AF1E2D;
+    }
+    
+    60%{
+        transform:translateX(30%);
+        color: white;
+    }
+    
+    70%{
+        transform:rotate3d(95deg);
+        color:color:#AF1E2D;
+    }
+    
+    90%{
+        transform: skewY(-76deg);
+        color: white;
+    }
+    
+    to{
+        
+        transform: none;
+        
+    }
+}
+
+/*Lier les animations pour les bonnes réponses et mauvaises réponses*/
+.animBon {
+		/*Effet d'animation*/
+		animation-name: reponse;
+		animation-duration: 0.5s;
+	   animation-fill-mode: forwards;
+} 
+
+.animMauvais {
+		/*Effet d'animation*/
+		animation-name: reponse;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+}
+
+/*Lier l'animation de transition pour les questions*/
+.quiz {
+    animation-name: transition;
+    animation-duration: 1.5s;
+}
+
+/*Lier les animations pour les lettres du titre*/
+.lettre:first-child{
+    animation-name: AnimIntro;
+    animation-duration: 2s;
+}
+
+.lettre:nth-child(2){
+    animation-name: AnimIntro;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+}
+
+.lettre:nth-child(3){
+    animation-name: AnimIntro;
+    animation-duration: 2s;
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(4){
+    animation-name: AnimIntro;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+}

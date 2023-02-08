@@ -1,0 +1,93 @@
+ 
+/*Couleur et style de base du corps de la page*/
+body {
+    background-color:#AF1E2D;
+    font-family: 'Helvetica';
+    color:white;
+    font-size: 1.5rem;
+    
+}
+
+
+main {
+    background: #192168;
+    border: solid 10px white;
+    
+}
+
+
+/*Effets sur le titre*/
+main h1 {
+    font-family: 'Brush Script MT';
+    text-shadow: 2px 2px #AF1E2D;
+}
+
+
+/*Style des choix*/
+#lesChoix {
+    display:flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+/*Style des choix individuellement*/
+.choix{
+    border: solid 2px white;
+    background-color: #AF1E2D;
+    transition: background-color 0.5s;
+    
+}
+
+/*Effet quand l'utilisateur pointe sa souris sur un choix*/
+.choix:hover{
+    background-color: #192168;
+}
+
+
+/*Couleur dépendement si la réponse est bonne ou mauvaise*/
+.animBon{
+    background-color: green;
+}
+
+.animMauvais{
+    background-color: red;
+}
+
+/*Style de la page de fin*/
+#fin{
+    background-color: #192168;
+    border: solid 3px white;
+}
+
+/*Rendre l'icone plus grande*/
+.material-icons{
+    font-size:40px;
+}
+
+/*Modifications dépendement de la taille de l'écran*/
+@media screen and (min-width: 768px) {
+   
+    html {
+        font-size: 2rem;
+    }
+    
+    #lesChoix {
+        flex-direction: row;
+    }
+  }
+
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 2rem;
+    }
+    
+    #lesChoix{
+        flex-direction: row;
+    }
+
+}
+ 

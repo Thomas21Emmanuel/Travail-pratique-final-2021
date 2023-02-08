@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+
+<head>
+    <title>TP_Final</title>
+    <meta charset="UTF-8" />
+    
+    <!-- Viewport -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Importer icone -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <!--Importer polices -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet"> 
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styledeBase.css">
+    <link rel="stylesheet" href="css/StyleQuiz.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+    
+    <body>
+    <!--L'intro-->
+    <main id="intro">
+        
+        <header>
+            <h1>Le coin culture</h1>
+            <div class="habs">
+                <div class="lettre">H</div>
+                <div class="lettre">A</div>
+                <div class="lettre">B</div>
+                <div class="lettre">S</div>
+            </div>
+         <h2>Cliquer pour débuter</h2>   
+        </header>
+        </main>
+        <!-- L'écran du quiz -->
+        <main class="quiz">
+        <header>Bienvenue au quiz !</header>
+            <span class="material-icons white">sports_hockey</span>
+         <section id="quiz">
+             <div id="titreQuestion">Titre de la queston</div>
+             
+             <div id="lesChoix"></div>
+          
+             <!-- AnNimation RAF de l'icone -->
+             <script>
+             let icone = document.querySelector("span");
+                let rotation = 0;
+                 
+                 let requeteID = 0;
+                 
+                 let lesBoutons = document.querySelectorAll(".bouton");
+        
+        icone.addEventListener("click", partirOuArreterAnimation);
+                 
+                 function tournerIcone() {
+                    
+            //Incrémenter le degré de rotation
+            rotation+=4;
+
+            //Tourner l'icône
+            icone.style.transform = `rotate(${rotation}deg)`
+            
+            //Partir une autre requête d'animation
+            requeteID = requestAnimationFrame(tournerIcone);
+
+        }
+
+
+        function partirAnimation() {
+            //Partir une première requête d'animation
+            //SI l'animation ne jouait pas déjà
+            if(requeteID == 0){
+                requeteID = requestAnimationFrame(tournerIcone);
+            }
+       
+        }
+
+        function arreterAnimation() {
+            //Arrêter l'animation
+            cancelAnimationFrame(requeteID);
+
+            //Ajuster le no de la requête à 0
+            requeteID = 0;
+
+        }
+
+        function partirOuArreterAnimation() {
+            //Partir une première requête d'animation, s'il n'y a pas de requête en cours déjà
+            if(requeteID == 0){
+                requeteID = requestAnimationFrame(tournerIcone)
+            }
+            else{
+                arreterAnimation();
+            }
+            
+        }
+             </script>
+             
+         <!--Section de fin -->    
+        </section>
+        </main>
+        <section id="fin">
+        <div></div>
+         <!-- Le footer -->   
+        </section>
+        <footer></footer>
+        <!--Prise en charge des scripts Java Script -->
+    <script src="js/questionsDuQuiz.js"></script>
+    <script src="js/fonction.js"></script>
+        <script src="js/application.js"></script>
+    </body>
+</html>
